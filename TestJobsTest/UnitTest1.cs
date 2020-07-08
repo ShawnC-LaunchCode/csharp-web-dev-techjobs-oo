@@ -7,23 +7,36 @@ namespace TestJobsTest
     public class UnitTest1
     {
         
-        Job test = new Job("Voldermort");
+        //Job test = new Job("Voldermort");
+
+        //[TestMethod]
+        //public void TestSettingJobId()
+        //{
+        //    int expected;
+        //    int actual;
+        //    Job test2 = new Job("George");
+
+        //    actual = test.Id;
+        //    expected = test2.Id;
+
+
+
+        //    Assert.IsFalse(expected == actual);
+        //}
+
 
         [TestMethod]
-        public void Constructor()
+        public void TestJobConstructorSetsAllFields()
         {
-            string expected;
-            string actual;
-            
+            string expected = null;
+            string actual = null;
 
-            actual = test.Value;
-            expected = "Voldermort";
-
+            actual = null;
+            expected = null;
 
 
             Assert.AreEqual(expected, actual);
         }
-
 
         [TestMethod]
         public void Test1()
@@ -31,14 +44,12 @@ namespace TestJobsTest
             string expected = null;
             string actual = null;
 
-            actual = test.Id.ToString();
-            expected = "1";
+            actual = null;
+            expected = null;
 
 
             Assert.AreEqual(expected, actual);
         }
-
-
 
 
 
