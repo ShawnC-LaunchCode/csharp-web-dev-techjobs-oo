@@ -6,49 +6,43 @@ namespace TestJobsTest
     [TestClass]
     public class UnitTest1
     {
+
         
-        //Job test = new Job("Voldermort");
-
-        //[TestMethod]
-        //public void TestSettingJobId()
-        //{
-        //    int expected;
-        //    int actual;
-        //    Job test2 = new Job("George");
-
-        //    actual = test.Id;
-        //    expected = test2.Id;
+        [TestMethod]
+        public void TestSettingJobId()
+        {
+            int expected;
+            int actual;
+            Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            Job job2 = new Job("Web Developer", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("JavaScript"));
+            actual = job1.Id;
+            expected = job2.Id;
 
 
 
-        //    Assert.IsFalse(expected == actual);
-        //}
+            Assert.IsFalse(expected == actual);
+        }
 
 
         [TestMethod]
         public void TestJobConstructorSetsAllFields()
         {
-            string expected = null;
-            string actual = null;
+            Job job1 = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-            actual = null;
-            expected = null;
-
-
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual("Product Tester",   job1.Name                           );
+            Assert.AreEqual("ACME",             job1.EmployerName.ToString()        );
+            Assert.AreEqual("Desert",           job1.EmployerLocation.ToString()    );
+            Assert.AreEqual("Quality control",  job1.JobType.ToString()             );
+            Assert.AreEqual("Persistence",      job1.JobCoreCompetency.ToString()   );
         }
 
         [TestMethod]
-        public void Test1()
+        public void JobTest()
         {
-            string expected = null;
-            string actual = null;
+            Job job1 = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            Job job2 = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-            actual = null;
-            expected = null;
-
-
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(job1.Equals(job2), false);
         }
 
 
