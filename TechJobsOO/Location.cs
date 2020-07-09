@@ -1,41 +1,41 @@
 ﻿using System;
 namespace TechJobsOO
 {
-    public class Location
+    public class Location : JobField
     {
-        public int Id { get; }
-        private static int nextId = 1;
-        public string Value { get; set; }
+        //public int Id { get; }
+        //private static int nextId = 1;
+        //public string Value { get; set; }
 
-        public Location()
-        {
-            Id = nextId;
-            nextId++;
+        //public Location()
+        //{
+        //    Id = nextId;
+        //    nextId++;
             
 
-        }
+        //}
 
         //  Add a second constructor to this class that uses the Location() constructor and sets the value of the value field.
 
-        public Location(string loc): this()
+        public Location(string loc): base()
         {
             Value = loc;
         }
 
-        public override bool Equals(object obj)
-        {
-            return obj is Location location &&
-                   Id == location.Id;
-        }
+        //public override bool Equals(object obj)
+        //{
+        //    return obj is Location location &&
+        //           Id == location.Id;
+        //}
 
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Id);
-        }
+        //public override int GetHashCode()
+        //{
+        //    return HashCode.Combine(Id);
+        //}
 
-        public override string ToString()
-        {
-            return Value;
-        }
+        //public override string ToString()
+        //{
+        //    return Value;
+        //}
     }
 }

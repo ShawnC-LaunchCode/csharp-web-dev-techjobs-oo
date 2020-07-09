@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using TechJobsOO;
 
 namespace TestJobsTest
@@ -45,6 +46,21 @@ namespace TestJobsTest
             Assert.AreEqual(job1.Equals(job2), false);
         }
 
+        [TestMethod]
+        public void FirstLine()
+        {
+            Job job1 = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+            Assert.IsTrue(job1.ToString().  StartsWith  ("\n")    );
+            Assert.IsTrue(job1.ToString().  EndsWith    ("\n")    );
+
+            Assert.IsTrue(job1.ToString().Contains("ID: 1"));
+            Assert.IsTrue(job1.ToString().Contains("Name: Product Tester"));
+            Assert.IsTrue(job1.ToString().Contains("Employer: ACME"));
+            Assert.IsTrue(job1.ToString().Contains("Location: Desert"));
+            Assert.IsTrue(job1.ToString().Contains("Position Type: Quality control"));
+            Assert.IsTrue(job1.ToString().Contains("Core Competency: Persistence"));
+        }
 
 
     }
